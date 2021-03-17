@@ -82,20 +82,17 @@ public class ND6 {
 
             System.out.println((i + 1) + "--------------------");
 
-            boolean status = true;
+            boolean diff = false;
             for (int x = 0; x < field.length; x++) {
                 for (int y = 0; y < field[x].length; y++) {
                     if (field[x][y] != newField[x][y]) {
-                        status = false;
-                        System.out.println("DIFFERENT");
+                        diff = true;
                         break;
-                    } else {
-                        System.out.println("SAME");
                     }
                 }
-                if(!status){
-                    break;
-                }
+            }
+            if (!diff) {
+                break;
             }
 
             field = newField;

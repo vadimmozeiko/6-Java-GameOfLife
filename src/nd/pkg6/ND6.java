@@ -79,6 +79,7 @@ public class ND6 {
                 }
                 System.out.println();
             }
+
             System.out.println((i + 1) + "--------------------");
 
             boolean status = true;
@@ -88,14 +89,17 @@ public class ND6 {
                         status = false;
                         System.out.println("DIFFERENT");
                         break;
+                    } else {
+                        System.out.println("SAME");
                     }
                 }
-                if (!status) {
-                  break;
+                if(!status){
+                    break;
                 }
             }
-                  field = newField;  
-            
+
+            field = newField;
+
         }
     }
 }

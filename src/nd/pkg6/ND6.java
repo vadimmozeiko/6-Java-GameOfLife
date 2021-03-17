@@ -72,28 +72,32 @@ public class ND6 {
                     }
                 }
             }
-            
-            
-            field = newField;
 
-//            for (int c = 0; c < field.length; c++) {
-//                for (int j = 0; j < field[c].length; j++) {
-//                   char c1 = field[c][j];
-//                   char c2 = newField[c][j];
-//                    System.out.println(c2);
-//                if (c1 == c2) {
-//                   
-//                }
-//                }
-//            }
-//            for (int y = 0; y < field.length; y++) {
-//                char[] line = field[y];
-//                for (int x = 0; x < line.length; x++) {
-//                    System.out.print(line[x]);
-//                }
-//                System.out.println();
-//            }
-//            System.out.println((i + 1) + "--------------------");
+            boolean status = false;
+            for (int c = 0; c < field.length; c++) {
+                for (int j = 0; j < field[c].length; j++) {
+                    if (field[c][j] != newField[c][j]) {
+                        status = false;
+                    } else {
+                        status = true;
+                    }
+                }
+            }
+
+            if (status) {
+                field = newField;
+                for (int y = 0; y < field.length; y++) {
+                    char[] line = field[y];
+                    for (int x = 0; x < line.length; x++) {
+                        System.out.print(line[x]);
+                    }
+                    System.out.println();
+                }
+                System.out.println((i + 1) + "--------------------");
+            } else {
+                System.out.println("GAME OVER");
+            }
+
         }
     }
 }

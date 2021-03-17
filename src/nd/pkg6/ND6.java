@@ -87,11 +87,11 @@ public class ND6 {
                 for (int y = 0; y < field[x].length; y++) {
                     if (field[x][y] != newField[x][y]) {
                         diff = true;
-                        break;
                     }
                 }
             }
             if (!diff) {
+                System.out.println("GAME OVER");
                 break;
             }
 

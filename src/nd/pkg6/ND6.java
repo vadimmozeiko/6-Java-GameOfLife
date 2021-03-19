@@ -1,6 +1,5 @@
 package nd.pkg6;
 
-
 public class ND6 {
 
     public static void main(String[] args) {
@@ -18,16 +17,10 @@ public class ND6 {
             }
         }
 
-
-        // Prints out current generated board
-        for (int y = 0; y < field.length; y++) {
-            char[] line = field[y];
-            for (int x = 0; x < line.length; x++) {
-                System.out.print(line[x]);
-            }
-            System.out.println();
-        }
-        System.out.println("--------------------");
+        System.out.println("---------- Game Of Life ----------");
+        System.out.println();
+        System.out.println("---------- Generated Board ----------");
+        System.out.println();
 
         // Generates 50 iterations
         for (int i = 0; i < 50; i++) {
@@ -55,7 +48,7 @@ public class ND6 {
                     }
                 }
             }
-            
+
             // Prints out new iteration
             for (int y = 0; y < field.length; y++) {
                 char[] line = field[y];
@@ -64,9 +57,10 @@ public class ND6 {
                 }
                 System.out.println();
             }
+            System.out.println();
+            System.out.println(" ---------- " + (i + 1) + " Generation ----------");
+            System.out.println();
 
-            System.out.println((i + 1) + "--------------------");
-            
             // Check if next iteration repeats
             boolean diff = false;
             for (int x = 0; x < field.length; x++) {
@@ -77,7 +71,7 @@ public class ND6 {
                 }
             }
             if (!diff) {
-                System.out.println("GAME OVER");
+                System.out.println("---------- GAME OVER ----------");
                 break;
             }
 

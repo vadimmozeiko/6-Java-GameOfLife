@@ -1,30 +1,23 @@
 package nd.pkg6;
 
-import java.util.Arrays;
 
 public class ND6 {
 
     public static void main(String[] args) {
 
         // Generates random board
-//        char[][] field = new char[10][20];
-//        for (int y = 0; y < field.length; y++) {
-//            char[] line = field[y];
-//            for (int x = 0; x < line.length; x++) {
-//                if (Math.random() < 0.2) {
-//                    line[x] = 'X';
-//                } else {
-//                    line[x] = '.';
-//                }
-//            }
-//        }
-        char[][] field = {
-            {'.', 'X', '.', '.'},
-            {'.', '.', 'X', '.'},
-            {'.', 'X', 'X', '.'},
-            {'X', '.', 'X', '.'},
-            {'.', '.', '.', '.'}
-        };
+        char[][] field = new char[10][20];
+        for (int y = 0; y < field.length; y++) {
+            char[] line = field[y];
+            for (int x = 0; x < line.length; x++) {
+                if (Math.random() < 0.2) {
+                    line[x] = 'X';
+                } else {
+                    line[x] = '.';
+                }
+            }
+        }
+
 
         // Prints out current generated board
         for (int y = 0; y < field.length; y++) {
@@ -57,21 +50,13 @@ public class ND6 {
                     }
                     if (field[y][x] == 'X') {
                         newField[y][x] = (kk == 2 || kk == 3) ? 'X' : '.';
-//                        if (kk == 2 || kk == 3) {
-//                            newField[y][x] = 'X';
-//                        } else {
-//                            newField[y][x] = '.';
-//                        }
                     } else {
                         newField[y][x] = (kk == 3) ? 'X' : '.';
-//                        if (kk == 3) {
-//                            newField[y][x] = 'X';
-//                        } else {
-//                            newField[y][x] = '.';
-//                        }
                     }
                 }
             }
+            
+            // Prints out new iteration
             for (int y = 0; y < field.length; y++) {
                 char[] line = field[y];
                 for (int x = 0; x < line.length; x++) {
@@ -81,7 +66,8 @@ public class ND6 {
             }
 
             System.out.println((i + 1) + "--------------------");
-
+            
+            // Check if next iteration repeats
             boolean diff = false;
             for (int x = 0; x < field.length; x++) {
                 for (int y = 0; y < field[x].length; y++) {
